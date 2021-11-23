@@ -10,6 +10,11 @@ def random_vector(n):
     v = np.array([x/r for x in components])
     return v
 
+def random_vectors(m, n):
+    array = np.random.normal(size=(m,n))
+    norm = np.linalg.norm(array, axis=1)
+    return array/norm[:, None]
+
 def random_joint_vectors(n):
     """Generate a list of random 3D unit vectors."""
     a, b = [], []
